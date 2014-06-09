@@ -1,0 +1,514 @@
+  [1m[36m (22.3ms)[0m  [1mCREATE TABLE `posts` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `body` text NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (21.4ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (17.1ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20140608093731')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by Api::PostsController#index as HTML
+Completed 406 Not Acceptable in 2ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by Api::PostsController#create as JSON
+  Parameters: {"title"=>"First post", "body"=>"First post body"}
+Completed 400 Bad Request in 0ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by Api::PostsController#index as HTML
+Completed 406 Not Acceptable in 3ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:08:33', 'First post', '2014-06-09 13:08:33')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 12ms (Views: 2.2ms | ActiveRecord: 2.1ms)
+  [1m[35m (11.0ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by Api::PostsController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`   ORDER BY id DESC[0m
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:10:25', 'First post', '2014-06-09 13:10:25')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 37ms (Views: 1.6ms | ActiveRecord: 18.9ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `posts`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by Api::PostsController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`   ORDER BY id DESC[0m
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:11:48', 'First post', '2014-06-09 13:11:48')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 24ms (Views: 1.5ms | ActiveRecord: 2.2ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by Api::PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT `posts`.* FROM `posts`   ORDER BY id DESC[0m
+Completed 200 OK in 12ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (5.7ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (1.4ms)[0m  SELECT DATABASE() as db
+  [1m[36m (1.2ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'yaas_test'[0m
+  [1m[35m (1.5ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:15:06', 'First post', '2014-06-09 13:15:06')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 32ms (Views: 2.0ms | ActiveRecord: 15.7ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (1.6ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by Api::PostsController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`   ORDER BY id DESC[0m
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SELECT DATABASE() as db
+  [1m[36m (1.1ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'yaas_test'[0m
+  [1m[35m (1.0ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:17:32', 'First post', '2014-06-09 13:17:32')[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 16ms (Views: 2.0ms | ActiveRecord: 2.8ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (1.3ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:17:32', 'First post', '2014-06-09 13:17:32')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (1.7ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:17:32', 'First post', '2014-06-09 13:17:32')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (1.3ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (13.7ms)[0m  BEGIN
+Processing by Api::PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`   ORDER BY id DESC[0m
+Completed 200 OK in 15ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  SELECT DATABASE() as db
+  [1m[36m (1.3ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'yaas_test'[0m
+  [1m[35m (1.0ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:20:42', 'First post', '2014-06-09 13:20:42')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 15ms (Views: 1.6ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (1.3ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:20:42', 'First post', '2014-06-09 13:20:42')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+Processing by Api::PostsController#update as JSON
+  Parameters: {"post"=>{"title"=>"First post upd", "body"=>"First post body upd"}, "id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  `posts`.* FROM `posts`  WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `posts` SET `body` = 'First post body upd', `title` = 'First post upd', `updated_at` = '2014-06-09 13:20:42' WHERE `posts`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (1.3ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#destroy as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}, "id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  `posts`.* FROM `posts`  WHERE `posts`.`id` = 1 LIMIT 1
+Completed 404 Not Found in 1ms
+  [1m[36m (0.1ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (1.0ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by Api::PostsController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`   ORDER BY id DESC[0m
+Completed 200 OK in 13ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SELECT DATABASE() as db
+  [1m[36m (2.2ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'yaas_test'[0m
+  [1m[35m (1.0ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:21:32', 'First post', '2014-06-09 13:21:32')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 15ms (Views: 1.9ms | ActiveRecord: 2.9ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (1.8ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:21:32', 'First post', '2014-06-09 13:21:32')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+Processing by Api::PostsController#update as JSON
+  Parameters: {"post"=>{"title"=>"First post upd", "body"=>"First post body upd"}, "id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  `posts`.* FROM `posts`  WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `posts` SET `body` = 'First post body upd', `title` = 'First post upd', `updated_at` = '2014-06-09 13:21:32' WHERE `posts`.`id` = 1
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.5ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (1.1ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:21:32', 'First post', '2014-06-09 13:21:32')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+Processing by Api::PostsController#destroy as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}, "id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  `posts`.* FROM `posts`  WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `posts` WHERE `posts`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `posts`[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (1.4ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by Api::PostsController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`   ORDER BY id DESC[0m
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SELECT DATABASE() as db
+  [1m[36m (1.0ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'yaas_test'[0m
+  [1m[35m (1.0ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:22:06', 'First post', '2014-06-09 13:22:06')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 15ms (Views: 1.9ms | ActiveRecord: 2.4ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (1.6ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:22:06', 'First post', '2014-06-09 13:22:06')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+Processing by Api::PostsController#update as JSON
+  Parameters: {"post"=>{"title"=>"First post upd", "body"=>"First post body upd"}, "id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  `posts`.* FROM `posts`  WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `posts` SET `body` = 'First post body upd', `title` = 'First post upd', `updated_at` = '2014-06-09 13:22:06' WHERE `posts`.`id` = 1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.5ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (1.2ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:22:06', 'First post', '2014-06-09 13:22:06')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+Processing by Api::PostsController#destroy as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}, "id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  `posts`.* FROM `posts`  WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `posts` WHERE `posts`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `posts`[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.8ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by Api::PostsController#index as JSON
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`   ORDER BY id DESC[0m
+Completed 200 OK in 17ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SELECT DATABASE() as db
+  [1m[36m (0.7ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'yaas_test'[0m
+  [1m[35m (0.9ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:22:38', 'First post', '2014-06-09 13:22:38')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 13ms (Views: 1.4ms | ActiveRecord: 2.2ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (1.4ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:22:38', 'First post', '2014-06-09 13:22:38')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.4ms)
+Processing by Api::PostsController#update as JSON
+  Parameters: {"post"=>{"title"=>"First post upd", "body"=>"First post body upd"}, "id"=>"1"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT  `posts`.* FROM `posts`  WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `posts` SET `body` = 'First post body upd', `title` = 'First post upd', `updated_at` = '2014-06-09 13:22:38' WHERE `posts`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (1.2ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:22:38', 'First post', '2014-06-09 13:22:38')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+Processing by Api::PostsController#destroy as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}, "id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  `posts`.* FROM `posts`  WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `posts` WHERE `posts`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 1.5ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `posts`[0m
+  [1m[35m (0.1ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (1.1ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:23:58', 'First post', '2014-06-09 13:23:58')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 15ms (Views: 1.5ms | ActiveRecord: 2.8ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SELECT DATABASE() as db
+  [1m[36m (0.7ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'yaas_test'[0m
+  [1m[35m (1.1ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:23:58', 'First post', '2014-06-09 13:23:58')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+Processing by Api::PostsController#index as JSON
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT `posts`.* FROM `posts`   ORDER BY id DESC[0m
+Completed 200 OK in 9ms (Views: 1.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (1.5ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:23:58', 'First post', '2014-06-09 13:23:58')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+Processing by Api::PostsController#update as JSON
+  Parameters: {"post"=>{"title"=>"First post upd", "body"=>"First post body upd"}, "id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  `posts`.* FROM `posts`  WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `posts` SET `body` = 'First post body upd', `title` = 'First post upd', `updated_at` = '2014-06-09 13:23:58' WHERE `posts`.`id` = 1[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 2.1ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (1.2ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:23:58', 'First post', '2014-06-09 13:23:58')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+Processing by Api::PostsController#destroy as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}, "id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  `posts`.* FROM `posts`  WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `posts` WHERE `posts`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `posts`
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (1.3ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:25:16', 'First post', '2014-06-09 13:25:16')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 15ms (Views: 1.3ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SELECT DATABASE() as db
+  [1m[36m (0.7ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'yaas_test'[0m
+  [1m[35m (1.2ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:25:16', 'First post', '2014-06-09 13:25:16')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+Processing by Api::PostsController#index as JSON
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`   ORDER BY id DESC[0m
+Completed 200 OK in 10ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (1.5ms)[0m  TRUNCATE TABLE `posts`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:25:16', 'First post', '2014-06-09 13:25:16')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+Processing by Api::PostsController#update as JSON
+  Parameters: {"post"=>{"title"=>"First post upd", "body"=>"First post body upd"}, "id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  `posts`.* FROM `posts`  WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `posts` SET `body` = 'First post body upd', `title` = 'First post upd', `updated_at` = '2014-06-09 13:25:16' WHERE `posts`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.7ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (1.1ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `posts` (`body`, `created_at`, `title`, `updated_at`) VALUES ('First post body', '2014-06-09 13:25:16', 'First post', '2014-06-09 13:25:16')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+Processing by Api::PostsController#destroy as JSON
+  Parameters: {"post"=>{"title"=>"First post", "body"=>"First post body"}, "id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  `posts`.* FROM `posts`  WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `posts` WHERE `posts`.`id` = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `posts`
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (1.0ms)[0m  [1mTRUNCATE TABLE `posts`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m

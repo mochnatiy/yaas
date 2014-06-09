@@ -1,0 +1,21 @@
+<div ng-include="'../assets/navigation.html'">
+</div>
+
+<div class="content-wrapper">
+  <h3 class="text-center">Редактирование</h3>
+  <form role="form">
+    <div><alert ng-repeat="alert in alerts" type="{{ alert.type }}" close="alert.close()">{{ alert.msg }}</alert></div>
+    <div class="form-group">
+      <label for="post_title"><strong>Заголовок</strong></label>
+      <input id="post_title" class="form-control" ng-model="formData.currentPostTitle" type="text" maxlength="250">
+    </div>
+    <div class="form-group">
+      <label for="post_body"><strong>Текст</strong></label>
+      <textarea id="post_body" class="form-control" rows="15" ng-model="formData.currentPostBody"></textarea>
+    </div>
+    <div class="form-group">
+      <hidden ng-model="formData.currentPostId"></hidden>
+      <button class="btn btn-primary" ng-click="updatePost()">Сохранить</button>
+    </div>
+  </form>
+</div>

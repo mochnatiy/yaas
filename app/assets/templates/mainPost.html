@@ -1,0 +1,19 @@
+<div ng-include="'../assets/navigation.html'">
+</div>
+
+<div class="content-wrapper">
+  <div><alert ng-repeat="alert in alerts" type="{{ alert.type }}" close="alert.close()">{{ alert.msg }}</alert></div>
+  <div class="post">
+    <div class="post-header">
+      <div class="left"><h3>{{ data.currentPost.title }}</h3></div>
+      <div class="right"><span class="post-date">{{ data.currentPost.timestamp }}</span></div>
+      <div class="clear" />
+    </div>
+    <div class="post-body"><p>{{ data.currentPost.body }}</p></div>
+    <div class="actions">
+      <button class="btn btn-primary left" ng-click="editPost(data.currentPost.id)">Редактировать</button>
+      <button class="btn btn-danger right" ng-click="deletePost()">Удалить</button>
+      <div class="clear" />
+    </div>
+  </div>
+</div>

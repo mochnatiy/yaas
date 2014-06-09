@@ -1,0 +1,21 @@
+<div ng-include="'../assets/navigation.html'">
+</div>
+
+<div class="content-wrapper" style="margin-top: 40px">
+  <h2 class="text-center">Yet Another Blog</h2>
+  <div><alert ng-repeat="alert in alerts" type="{{ alert.type }}" close="alert.close()">{{ alert.msg }}</alert></div>
+  <div class="post" ng-repeat="post in data.posts">
+    <div class="post-header">
+      <div class="left">
+        <h3><a ng-click="viewPost(post.id)">{{ post.title }}</a></h3>
+      </div>
+      <div class="right">
+        <span class="post-date">{{ post.timestamp }}</span>
+      </div>
+      <div class="clear" />
+    </div>
+    <div class="post-body">
+      <p>{{ post.body }}</p>
+    </div>
+  </div>
+</div>
